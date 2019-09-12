@@ -31,7 +31,7 @@ class SearchBar extends React.Component {
     fetch(url, options)
       .then(res => {
         if(!res.ok) {
-          throw new Error('Something went wrong, plesae try again later.');
+          throw new Error('Something went wrong, please try again later.');
         }
         return res;
       })

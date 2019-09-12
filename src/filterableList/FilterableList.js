@@ -1,12 +1,20 @@
 import React from 'react';
-import ListItem from './listItem/ListItem';
+import './FilterableList.css';
+import ListItem from '../listItem/ListItem';
 
-class ListItem extends React.Component {
+class FilterableList extends React.Component {
+  
   render() {
-    return (
-      <ListItem />
+    let tempBooks = this.props.books || []
+    const books = tempBooks.map((book, i) => 
+      <ListItem {...book} key={i} />
     )
+    return (
+      <div>
+        {books}
+      </div>
+    );
   }
 }
 
-export default ListItem
+export default FilterableList;

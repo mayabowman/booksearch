@@ -24,7 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <SearchBar updateList = {this.updateList} />
+        <SearchBar updateList={this.updateList} />
         <FilterableList books={this.state.books}/>
       </div>
     );

@@ -15,7 +15,6 @@ class App extends React.Component {
   }
 
   updateList(data) {
-    console.log(data)
     this.setState({
       books: data
     });

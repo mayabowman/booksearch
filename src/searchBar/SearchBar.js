@@ -19,7 +19,6 @@ class SearchBar extends React.Component {
     const apiKey = 'AIzaSyB2iYNqSEI-aPm4jOCT0Qx29nioMsr_gds'
     const queryItems = Object.keys(params).map(key => `${key}=${params[key]}`).join('&');
     const url = `https://www.googleapis.com/books/v1/volumes?${queryItems}&key=${apiKey}`;
-    console.log(url)
     const options = {
       method: 'GET',
       headers: {
@@ -36,7 +35,6 @@ class SearchBar extends React.Component {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         this.setState({
           error: null
         })

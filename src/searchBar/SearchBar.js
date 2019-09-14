@@ -3,8 +3,6 @@ import './SearchBar.css'
 import SearchBox from '../searchBox/SearchBox';
 import FilterOptions from '../filterOptions/FilterOptions';
 
-// key: 
-
 class SearchBar extends React.Component {
   
   constructor(props) {
@@ -20,7 +18,7 @@ class SearchBar extends React.Component {
   getBooks(params) {
     const apiKey = 'AIzaSyB2iYNqSEI-aPm4jOCT0Qx29nioMsr_gds'
     const queryItems = Object.keys(params).map(key => `${key}=${params[key]}`).join('&');
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${queryItems}&key=${apiKey}`;
+    const url = `https://www.googleapis.com/books/v1/volumes?${queryItems}&key=${apiKey}`;
     console.log(url)
     const options = {
       method: 'GET',
@@ -73,12 +71,12 @@ class SearchBar extends React.Component {
   submitSearch() {
     const { bookType, searchTerm, printType } = this.state;
     const params = bookType ? {
-        q : searchTerm,
-        printType : printType,
-        filter : bookType
+        q: searchTerm,
+        printType: printType,
+        filter: bookType
       } : {
-        q : searchTerm,
-        printType : printType
+        q: searchTerm,
+        printType: printType
       }
     this.getBooks(params)  
   }
